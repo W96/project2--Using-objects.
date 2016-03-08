@@ -1,0 +1,39 @@
+//Project2-Collantes.java
+
+float moonX,moonY;
+float horizon;
+/*Nugget trophy;
+Hero idol;
+Monster giant;*/
+
+void setup() {
+  size(800,700);
+  horizon= 0;
+  /*idol= new Hero();
+  giant= new Monster();
+  trophy= new Nugget();*/
+}
+void draw() {
+  background(23,37,77);
+  scene();
+  action();
+}
+void scene() {
+  fill(17,49,16);
+  rect(horizon,width/3.4,800,500);
+  //Moon
+  fill(165,170,165);
+  ellipse(moonX,moonY,70,70);
+  fill(227);
+  ellipse(moonX+5,moonY-5,10,10);
+  ///continue circles
+  ///ellipse(
+}
+void action(){
+  if (moonX>width) {
+    moonX=3;
+ }
+  moonX=moonX+1;
+  moonY=40;
+ } 
+  
