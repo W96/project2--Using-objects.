@@ -2,21 +2,25 @@
 
 float moonX,moonY;
 float horizon;
-/*Nugget trophy;
-Hero idol;
-Monster giant;*/
+//Nugget trophy;
+//Hero idol;
+float idolX,idolY,idoldx,idoldy;
+float trophyX,trophyY;
+//Monster giant;
 
 void setup() {
   size(800,700);
   horizon= 0;
-  /*idol= new Hero();
-  giant= new Monster();
-  trophy= new Nugget();*/
+  //idol= new Hero();
+  //giant= new Monster();
+  //trophy= new Nugget();
 }
 void draw() {
   background(23,37,77);
   scene();
   action();
+  idol();
+  trophy();
 }
 void scene() {
   fill(17,49,16);
@@ -44,13 +48,60 @@ void scene() {
   fill(22,27,52);
   stroke(232,230,227);
   rect(27,220,120,50);
-  ////make lines on windows
+  line(27,245,147,245);
+  line(65,220,65,270);
+  line(110,220,110,270);
+  //Door
+  fill(26,23,23);
+  noStroke();
+  rect(60,300,60,50);
+  fill(255);
+  ellipse(65,330,5,5);
+  
   
 }
 void action(){
+  //Moon
   if (moonX>width) {
-    moonX=3;
+    moonX=0;
  }
+ 
   moonX=moonX+1;
   moonY=40;
- } 
+ 
+ //Idol
+ if (idolX>width) {
+   idolX=0;
+ }
+ idolX=idolX+1;
+ idolX=idolX+idoldx;
+ idolY=idolY+idoldy;
+ 
+ //Trophy
+ idolX=idolX+(trophyX-idolX)/5;
+ idolY=idolY+(trophyY-idolY)/5;
+ 
+ if(trophyX>width) {
+   trophyX=0;
+ }
+ trophyX=trophyX+2;
+ 
+ if (trophyY>height) {
+   trophyY=width/3;
+ }
+ trophyY=trophyY+2;
+}
+ 
+ 
+
+
+void idol() {
+  rect(idolX,idolY,30,40);
+}
+
+void trophy() {
+  fill(245,255,185);
+  ellipse(trophyX,trophyY,20,20);
+  
+  
+}
