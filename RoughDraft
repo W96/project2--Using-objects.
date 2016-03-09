@@ -6,6 +6,7 @@ float horizon;
 //Hero idol;
 float idolX,idolY,idoldx,idoldy;
 float trophyX,trophyY;
+float giantX, giantY;
 //Monster giant;
 
 void setup() {
@@ -20,6 +21,7 @@ void draw() {
   scene();
   action();
   idol();
+  giant();
   trophy();
 }
 void scene() {
@@ -96,12 +98,39 @@ void action(){
 
 
 void idol() {
-  rect(idolX,idolY,30,40);
+  fill(129,92,108);
+  rect(idolX,idolY,30,40);                      ///Body
+  
+  fill(255);
+  fill(252,242,247);
+  ellipse(idolX+15,idolY-13,35,35);             ///Head
+  
+  fill(255);
+  stroke(0);
+  ellipse(idolX+8,idolY-16,12,12);             ///LeftEye
+  
+  fill(0);
+  ellipse(idolX+8,idolY-15,6,6);
+  
+  fill(255);
+  stroke(0);
+  
+  ellipse(idolX+20,idolY-16,12,12);             ///RightEye
+  
+  fill(0);
+  ellipse(idolX+20,idolY-15,6,6);
+  
+  fill(0);
+  ellipse(idolX+15,idolY-2,7,7);                ///Mouth
+}
+
+void giant() {                       ////CREATE GIANT AND LET FOLLW
+  fill(56,149,131);
+  ellipse(giantX,giantY,50,50);
 }
 
 void trophy() {
   fill(245,255,185);
   ellipse(trophyX,trophyY,20,20);
-  
   
 }
