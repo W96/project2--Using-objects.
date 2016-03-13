@@ -6,7 +6,7 @@ float horizon;
 //Hero idol;
 float idolX,idolY,idoldx,idoldy;
 float trophyX,trophyY;
-float giantX, giantY;
+float giantX, giantY, giantdx, giantdy;
 //Monster giant;
 
 void setup() {
@@ -20,8 +20,8 @@ void draw() {
   background(23,37,77);
   scene();
   action();
-  idol();
   giant();
+  idol();
   trophy();
 }
 void scene() {
@@ -92,10 +92,34 @@ void action(){
    trophyY=width/3;
  }
  trophyY=trophyY+2;
-}
- 
- 
 
+ //Giant
+ /*if (giantX>width) {
+   giantX=0;
+ }
+ giantX=giantX+5;
+ giantX=giantX+giantdx;
+ giantY=giantY+giantdy; */
+ 
+ giantX=giantX+(idolX-giantX)/1;   ///Giant follows Idol
+ giantY=giantY+(idolY-giantY)/1;
+ 
+ /*if(giantX>width) {
+   giantX=0;
+ }
+ giantX=giantX+1;*/
+ 
+}
+
+void giant() {                       ////CREATE GIANT AND LET FOLLW
+  fill(0);
+  ellipse(giantX,giantY,80,120);
+  //Eyes
+  fill(255);
+  ellipse(giantX-13,giantY-20,10,30);
+  ellipse(giantX+13,giantY-20,10,30);
+  
+}
 
 void idol() {
   fill(129,92,108);
@@ -124,10 +148,16 @@ void idol() {
   ellipse(idolX+15,idolY-2,7,7);                ///Mouth
 }
 
-void giant() {                       ////CREATE GIANT AND LET FOLLW
-  fill(56,149,131);
-  ellipse(giantX,giantY,50,50);
-}
+/*void giant() {                       ////CREATE GIANT AND LET FOLLW
+  fill(0);
+  ellipse(giantX,giantY,80,120);
+  //Eyes
+  fill(255);
+  ellipse(giantX-13,giantY-20,10,30);
+  ellipse(giantX+13,giantY-20,10,30);*/
+  
+  
+
 
 void trophy() {
   fill(245,255,185);
