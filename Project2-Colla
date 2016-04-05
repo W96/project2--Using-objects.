@@ -1,4 +1,5 @@
 //Project2-Collantes.java
+String author="Ana Collantes";
 
 float moonX,moonY;
 float horizon;
@@ -8,6 +9,9 @@ float idolX,idolY,idoldx,idoldy;
 float trophyX,trophyY;
 float giantX, giantY, giantdx, giantdy;
 //Monster giant;
+
+int idolscore;
+int giantscore;
 
 void setup() {
   size(800,700);
@@ -23,6 +27,7 @@ void draw() {
   giant();
   idol();
   trophy();
+  messages();
 }
 void scene() {
   fill(17,49,16);
@@ -80,8 +85,8 @@ void action(){
  idolY=idolY+idoldy;
  
  //Trophy
- idolX=idolX+(trophyX-idolX)/5;
- idolY=idolY+(trophyY-idolY)/5;
+ idolX=idolX+(trophyX-idolX)/50;
+ idolY=idolY+(trophyY-idolY)/50;
  
  if(trophyX>width) {
    trophyX=0;
@@ -101,8 +106,8 @@ void action(){
  giantX=giantX+giantdx;
  giantY=giantY+giantdy; */
  
- giantX=giantX+(idolX-giantX)/1;   ///Giant follows Idol
- giantY=giantY+(idolY-giantY)/1;
+ giantX=giantX+(idolX-giantX)/60;   ///Giant follows Idol
+ giantY=giantY+(idolY-giantY)/60;
  
  /*if(giantX>width) {
    giantX=0;
@@ -119,6 +124,13 @@ void giant() {                       ////CREATE GIANT AND LET FOLLW
   ellipse(giantX-13,giantY-20,10,30);
   ellipse(giantX+13,giantY-20,10,30);
   
+  if(dist(giantX,giantY,idolX,idolY)<60){ ///GIANT SCORE CATCHING IDOL//
+    giantscore=giantscore+100;
+    idolX=random(0,600);
+    idolY=random(0,width);
+    giantX=random(0,600);
+    giantY=random(0,width);
+  }
 }
 
 void idol() {
@@ -163,4 +175,22 @@ void trophy() {
   fill(245,255,185);
   ellipse(trophyX,trophyY,20,20);
   
+  if(dist(idolX,idolY,trophyX,trophyY)<80){ ////MAKES SCORE SHOW UP//
+    idolscore=idolscore+100;
+    trophyX=random(0,600);
+    trophyY=random(0,height);
+    idolX=random(0,600);
+    idolY=random(0,height);
+  }
+  
+}
+
+void messages() {
+  fill(255);
+  textSize(14);
+  text(author, 10,690);
+  
+  text("Idol Score="+idolscore,620,10);
+  
+  text("Giant Score="+giantscore,620,30);
 }
