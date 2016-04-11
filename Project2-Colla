@@ -1,5 +1,5 @@
 //Project2-Collantes.java
-String author="Ana Collantes";
+String author="Ana Collantes-Project2";
 
 float moonX,moonY;
 float horizon;
@@ -129,7 +129,7 @@ void giant() {                       ////CREATE GIANT AND LET FOLLW
   ellipse(giantX+13,giantY-20,10,30);
   
   if(dist(giantX,giantY,idolX,idolY)<60){ ///GIANT SCORE CATCHING IDOL//
-    giantscore=giantscore+100;
+    giantscore=giantscore+50;
     idolX=random(0,600);
     idolY=random(0,width);
     giantX=random(0,600);
@@ -213,7 +213,15 @@ void dog() {
   line(dogX+46,dogY+11,dogX+55,dogY+11);
   
   fill(77,34,34);  //ears+++++++++
-  triangle(dogX+30,dogY-5,dogX+31,dogY-25,dogX+40,dogY-5);
+  triangle(dogX+35,dogY-6,dogX+32,dogY-25,dogX+45,dogY-15); //by left eye
+  triangle(dogX+50,dogY-16,dogX+56,dogY-29,dogX+58,dogY-15); //by right eye
+  
+  //legs
+  noStroke();
+  rect(dogX+34,dogY+20,7,20);//front leg bigger
+  rect(dogX+27,dogY+20,6,14);///front leg smaller
+  rect(dogX+4,dogY+20,6,14); ///back smaller leg
+  rect(dogX+11,dogY+20,7,20);//back bigger leg
   
   
   dogX=dogX+dogspeed;
