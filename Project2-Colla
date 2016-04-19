@@ -251,7 +251,7 @@ void dog() {
   triangle(dogX+X9,dogY-6,dogX+X10,dogY-25,dogX+X11,dogY-15); //by left eye
   triangle(dogX+X12,dogY-16,dogX+X13,dogY-29,dogX+X14,dogY-15); //by right eye
    
-      ///                   30    36       38       10    7          20
+   /////EARS move as it follows idol from left to right with head
  /////////////////// if(dogX>idolX) {   X9=30; X10=36; X11=38;   X12=10; X13=7; X14=20;  /////for ears
  /////////////////// } if(dogX<idolX) { X9=35; X10=32; X11=45;   X12=50; X13=56; X14=58;
  ///////////////////}
