@@ -29,13 +29,13 @@ int X6=65;
 int X7=46;////mouth line
 int X8=55;//mouth line
 
-int X9=35;  ////by left eye
-int X10=32;  ///by left eye
-int X11=45;   ///by left eye
+int X9=35;  /// EARS by left eye
+int X10=32;  /// EARS by left eye
+int X11=45;   /// EARS by left eye
 
-int X12=50; ///by right eye
-int X13=56;  ///by right eye
-int X14=58;   ///by right eye
+int X12=50; /// EARS by right eye
+int X13=56;  /// EARS by right eye
+int X14=58;   /// EARS by right eye
 
 void setup() {
   size(800,700);
