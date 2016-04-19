@@ -16,6 +16,27 @@ int dogspeed=1;
 int idolscore;
 int giantscore;
 
+
+int X1=50;  ///for head
+
+int X2=48; ///Left side eye
+int X3=60; ///right side eye
+
+int X4=55;/// nose
+int X5=68;///nose
+int X6=65;
+
+int X7=46;////mouth line
+int X8=55;//mouth line
+
+int X9=35;  ////by left eye
+int X10=32;  ///by left eye
+int X11=45;   ///by left eye
+
+int X12=50; ///by right eye
+int X13=56;  ///by right eye
+int X14=58;   ///by right eye
+
 void setup() {
   size(800,700);
   horizon= 0;
@@ -192,29 +213,48 @@ void trophy() {
 void dog() {
   fill(77,34,34);
   rect(dogX,dogY,45,25); //body
-  ellipse(dogX+50,dogY,30,30);  //head
+  ellipse(dogX+X1,dogY,30,30);  //head
+  
+  if(dogX>idolX) { X1=0;X2=0; X3=-12; X4=-7; X5=-20; X6=-17;X7=2; X8=-11; /////dog's head moves as the idol goes from left to right
+  }if (dogX<idolX) { X1=50;X2=48; X3=60;X4=55; X5=68; X6=65;X7=46; X8=55;
+  }
   
   fill(255);  ///eyes
-  ellipse(dogX+48,dogY-5,10,10);
-  ellipse(dogX+60,dogY-5,10,10);
+  ellipse(dogX+X2,dogY-5,10,10);
+  ellipse(dogX+X3,dogY-5,10,10);
   fill(0);
-  ellipse(dogX+48,dogY-5,5,5);
-  ellipse(dogX+60,dogY-5,5,5);
+  ellipse(dogX+X2,dogY-5,5,5);
+  ellipse(dogX+X3,dogY-5,5,5);
+  
+ // if(dogX>idolX) { X2=0; X3=-12;   /////eyes goes left to right as it follows idol
+  //} if(dogX<idolX) { X2=48; X3=60;
+ // }
   
   fill(77,34,34); ///nose
-  //ellipse(dogX+58,dogY+5,10,10);
-  //fill(240,211,211);
-  //ellipse(dogX+58,dogY+5,2,2);
-  triangle(dogX+55,dogY+2,dogX+68,dogY+4, dogX+55,dogY+10);
+  triangle(dogX+X4,dogY+2,dogX+X5,dogY+4, dogX+X4,dogY+10);
   fill(0);
-  ellipse(dogX+65,dogY+5,4,4);
+  ellipse(dogX+X6,dogY+5,4,4);
+  
+ // if(dogX>idolX) { X4=-7; X5=-20; X6=-17;  ////nose 
+ // } if(dogX<idolX) { X4=55; X5=68; X6=65;
+ // }
   
   stroke(0);        ///mouth
-  line(dogX+46,dogY+11,dogX+55,dogY+11);
+  line(dogX+X7,dogY+11,dogX+X8,dogY+11);
+  
+ // if(dogX>idolX) { X7=2; X8=-11;   /////mouth line
+ // } if(dogX<idolX) { X7=46; X8=55;
+ // }
+  
   
   fill(77,34,34);  //ears+++++++++
-  triangle(dogX+35,dogY-6,dogX+32,dogY-25,dogX+45,dogY-15); //by left eye
-  triangle(dogX+50,dogY-16,dogX+56,dogY-29,dogX+58,dogY-15); //by right eye
+  triangle(dogX+X9,dogY-6,dogX+X10,dogY-25,dogX+X11,dogY-15); //by left eye
+  triangle(dogX+X12,dogY-16,dogX+X13,dogY-29,dogX+X14,dogY-15); //by right eye
+   
+      ///                   30    36       38       10    7          20
+ /////////////////// if(dogX>idolX) {   X9=30; X10=36; X11=38;   X12=10; X13=7; X14=20;  /////for ears
+ /////////////////// } if(dogX<idolX) { X9=35; X10=32; X11=45;   X12=50; X13=56; X14=58;
+ ///////////////////}
   
   //legs
   noStroke();
