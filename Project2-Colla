@@ -215,8 +215,25 @@ void dog() {
   rect(dogX,dogY,45,25); //body
   ellipse(dogX+X1,dogY,30,30);  //head
   
-  if(dogX>idolX) { X1=0;X2=0; X3=-12; X4=-7; X5=-20; X6=-17;X7=2; X8=-11; /////dog's head moves as the idol goes from left to right
+  if(dogX>idolX) { X1=0;X2=0; X3=-12; X4=-7; X5=-20; X6=-17;X7=2; X8=-11;
+X9=35;  /// EARS by left eye
+X10=32;  /// EARS by left eye
+X11=45;   /// EARS by left eye
+
+X12=50; /// EARS by right eye
+X13=56;  /// EARS by right eye
+X14=58;   /// EARS by right eye
+ 
+ 
+  /////dog's head moves as the idol goes from left to right
   }if (dogX<idolX) { X1=50;X2=48; X3=60;X4=55; X5=68; X6=65;X7=46; X8=55;
+X9=35;  /// EARS by left eye
+X10=32;  /// EARS by left eye
+X11=45;   /// EARS by left eye
+
+X12=50; /// EARS by right eye
+X13=56;  /// EARS by right eye
+X14=58;   /// EARS by right eye
   }
   
   fill(255);  ///eyes
